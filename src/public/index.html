@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #result {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            min-height: 100px;
+            white-space: pre-wrap;
+            font-family: monospace;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>API Access Demo</h1>
+    <button onclick="window.demo.directFetch()">Direct API Call (Will Fail)</button>
+    <button onclick="window.demo.proxyFetch()">Proxy API Call (Will Succeed)</button>
+    <button onclick="window.demo.complexProxyFetch()">Complex Proxy Call</button>
+    <div id="result"></div>
+
+    <script type="module">
+        import * as demo from './js/demo.js';
+        // 将demo函数暴露到全局作用域，以便按钮点击时调用
+        window.demo = demo;
+    </script>
+</body>
+
+</html>
